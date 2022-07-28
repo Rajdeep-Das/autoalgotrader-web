@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/landing.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:39:49 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ALGOAUTOTRADERS | Register Page</title>
+     <!-- CSS files -->
+    <link href="/dist/css/tabler.min.css" rel="stylesheet" />
+    <link href="/dist/css/tabler-flags.min.css" rel="stylesheet" />
+    <link href="/dist/css/tabler-payments.min.css" rel="stylesheet" />
+    <link href="/dist/css/tabler-vendors.min.css" rel="stylesheet" />
+    <link href="/dist/css/demo.min.css" rel="stylesheet" />
+    <!-- 1. Add the following script to your page. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="./angular/angular-storage.min.js"></script>
+    <script src="./angular/angular-payments.js"></script>
+    <script src="./angular/app.js"></script>
+    <!-- <script src="./angular/service.local.js"></script> -->
+    <script src="./angular/service.js"></script>
+    <script src="./angular/algotraderCtrl.js"></script>
+    <!-- <script src="./angular/services.js"></script>-->
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body id="page-top" class="landing-page no-skin-config">
+<div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top navbar-expand-md" role="navigation">
+            <div class="container">
+                <div class="collapse navbar-collapse justify-content-start" id="navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="nav-link page-scroll" href="index.html">Home</a></li>
+                        <li><a class="nav-link page-scroll" href="strategies.html">Strategies</a></li>
+                        <li><a class="nav-link page-scroll" href="#features">Features</a></li>
+                        <li><a class="nav-link page-scroll" href="#team">Team</a></li>
+                        <li><a class="nav-link page-scroll" href="#testimonials">Testimonials</a></li>
+                        <li><a class="nav-link page-scroll" href="#pricing">Pricing</a></li>
+                        <li><a class="nav-link page-scroll" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <a class="navbar-brand" href="login.html">LOGIN</a>
+                <a class="navbar-brand" href="register.html">REGISTER</a>
+                <div class="navbar-header page-scroll">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+</div>
+
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <div class="container"></div>
+            <!-- Set background for slide in css -->
+            <img src="img/landing/header_two_a.jpg">
+        </div>
+    </div>
+
+
+
+<!--register section starts-->
+
+    <div class="container mt-5">
+        <div class="row mt-5 d-flex justify-content-center" >
+            <div class="col-lg-6">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-lg-offset-1 features-text">
+                        <small>AUTOTRADER</small>
+                        <h2>Perfectly designed </h2>
+                        <p>AUTOTRADER Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row" ng-app="website" ng-controller="algotraderCtrl" ng-init="init()">
+                    <div class="col-lg-12">
+                        <ul class="login-page list-unstyled selected float-right">
+                            <li class="login-page" style="text-align:center;">
+                                Register Here
+                            </li>
+                       </ul><br>
+                       <!--registar section starts-->
+                       <div class="form float-right">
+                        <form name="registerForm" style="width:300px;">
+                            <div class="m-t" role="form" action="http://webapplayers.com/inspinia_admin-v2.9.4/login.html">
+                                <div class="form-group">
+                                    <label class="form-label p-1 mt-1" for="form3Example3"><strong>Name</strong></label>
+                                    <input type="text" name="username" class="form-control" placeholder="Name" ng-model="data.name" required>
+                                    <span class="error  pl-1" ng-show="!registerForm.username.$valid && (registerForm.username.$touched || submitted)">Name is required</span>
+                                    <!-- <pre>{{registerForm | json}}</pre> -->
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label p-1 mt-1" for="form3Example3"><strong>Company</strong></label>
+                                    <input type="text" name="company_name" class="form-control" placeholder="Company Name" ng-model="data.Company_name" required>
+                                    <span class="error  pl-1" ng-show="!registerForm.company_name.$valid && (registerForm.company_name.$touched || submitted)">Company name is required</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label p-1 mt-1" for="form3Example3"><strong>Address</strong></label>
+                                    <input type="text" name="address" class="form-control" placeholder="address" ng-model="data.address" required>
+                                    <span class="error  pl-1" ng-show="!registerForm.company_name.$valid && (registerForm.company_name.$touched || submitted)">Company name is required</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label p-1 mt-1" for="form3Example3"><strong>Country</strong></label>
+                                    <input type="text" name="country" class="form-control" placeholder="country" ng-model="data.country" required>
+                                    <span class="error  pl-1" ng-show="!registerForm.company_name.$valid && (registerForm.company_name.$touched || submitted)">Company name is required</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label p-1 mt-1" for="form3Example3"><strong>Phone number</strong></label>
+                                    <input type="text" 
+                                    name="phone"
+                                    ng-minlength="10" 
+                                    ng-maxlength="10" 
+                                    ng-required="true" 
+                                    class="form-control" placeholder="Phone Number" ng-model="data.phone" required>
+                                    <span class="error  pl-1" ng-show="(!registerForm.phone.$valid || registerForm.phone.$error.number) && (registerForm.phone.$touched || submitted)">Valid phone number is required</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label p-1 mt-1" for="form3Example3"><strong>Email address</strong></label>
+                                    <input type="email" name="email" class="form-control" placeholder="Email" ng-model="data.email" required>
+                                    <span class="error  pl-1" ng-show="!registerForm.email.$valid && registerForm.email.$touched">Email is required</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label p-1 mt-1" for="form3Example3"><strong>Password</strong></label>
+                                    <input type="password"  name="password" class="form-control" placeholder="Password" ng-model="data.password" required>
+                                    <span class="error pl-1" ng-show="!registerForm.password.$valid && (registerForm.password.$touched || submitted)">Please provide password</span>
+                                </div>
+                                <div class="form-group">
+                                        <div class="checkbox i-checks"><label> 
+                                        <input name="agree" type="checkbox" ng-model="agree" required><i></i> Agree the terms and policy </label></div>
+                                        <span class="error  pl-1" ng-show="!agree && (registerForm.agree.$touched || submitted)">Must agree terms and policy</span>
+                                        <!-- <pre>{{agree}}</pre> -->
+                                </div>
+                                <div class="button" style="width:60%;">
+                                    <button type="submit" ng-click="add()" ng-disabled="registerForm.$invalid" class="btn btn-primary block full-width m-b">Register</button>
+                
+                                <p class="text-muted text-center"><small1>Already have an account?</small> <a href="login.html" class="link-danger">Login</a></p>
+                                
+                                </div>
+                            </div>
+                        </form>
+                       </div>
+                       <!--registar section ends-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+<div aria-hidden="true" role="dialog" tabindex="-1" id="welcome" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content text-left">
+            <div class="modal-header">
+                <h4 class="modal-title">Forgot Password</h4>
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button"><i class="ti-close"></i></button>
+            </div>
+
+            <div class="modal-body">
+                <div>
+                    <span>  </span>
+                </div>
+
+                <form class="form-horizontal">
+
+
+                    <div class="form-group">
+                        <div class="col-lg-10">
+                            <span>Recovery Email</span>
+                            <input type="text" class="form-control " ng-model="cardname">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            </span>
+                            <button class="btn btn-primary" type="submit" ng-click="sendnewpassword()">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="contact" class="gray-section contact">
+    <div class="container">
+        <div class="row m-b-lg">
+            <div class="col-lg-12 text-center">
+                <div class="navy-line"></div>
+                <h1>Contact Us</h1>
+                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+            </div>
+        </div>
+        <div class="row m-b-lg justify-content-center">
+            <div class="col-lg-3 ">
+                <address>
+                    <strong><span class="navy">Company name, Inc.</span></strong><br/>
+                    795 Folsom Ave, Suite 600<br/>
+                    San Francisco, CA 94107<br/>
+                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                </address>
+            </div>
+            <div class="col-lg-4">
+                <p class="text-color">
+                    Consectetur adipisicing elit. Aut eaque, totam corporis laboriosam veritatis quis ad perspiciatis, totam corporis laboriosam veritatis, consectetur adipisicing elit quos non quis ad perspiciatis, totam corporis ea,
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <a href="mailto:test@email.com" class="btn btn-primary">Send us mail</a>
+                <p class="m-t-sm">
+                    Or follow us on social platform
+                </p>
+                <ul class="list-inline social-icon">
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center m-t-lg m-b-lg">
+                <p><strong>&copy; 2015 Company Name</strong><br/> consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+<script src="js/plugins/wow/wow.min.js"></script>
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $('body').scrollspy({
+            target: '#navbar',
+            offset: 80
+        });
+
+        // Page scrolling feature
+        $('a.page-scroll').bind('click', function(event) {
+            var link = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(link.attr('href')).offset().top - 50
+            }, 500);
+            event.preventDefault();
+            $("#navbar").collapse('hide');
+        });
+    });
+
+    var cbpAnimatedHeader = (function() {
+        var docElem = document.documentElement,
+                header = document.querySelector( '.navbar-default' ),
+                didScroll = false,
+                changeHeaderOn = 200;
+        function init() {
+            window.addEventListener( 'scroll', function( event ) {
+                if( !didScroll ) {
+                    didScroll = true;
+                    setTimeout( scrollPage, 250 );
+                }
+            }, false );
+        }
+        function scrollPage() {
+            var sy = scrollY();
+            if ( sy >= changeHeaderOn ) {
+                $(header).addClass('navbar-scroll')
+            }
+            else {
+                $(header).removeClass('navbar-scroll')
+            }
+            didScroll = false;
+        }
+        function scrollY() {
+            return window.pageYOffset || docElem.scrollTop;
+        }
+        init();
+
+    })();
+
+    // Activate WOW.js plugin for animation on scrol
+    new WOW().init();
+
+</script>
+
+</body>
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/landing.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:41:10 GMT -->
+</html>
