@@ -1,5 +1,9 @@
 app.controller('algotraderCtrl', function ($scope, $http, $window, $location, config) {
 
+    /* ----  Global Varibales Sections  ---- */
+    $scope.savingButtonMsg = "Save"
+
+
     $scope.data = { 'org_id': 14 }
     // $scope.data = {'stock': ETHUSD}
 
@@ -112,7 +116,7 @@ app.controller('algotraderCtrl', function ($scope, $http, $window, $location, co
 
     }
 
-    $scope.addbrokerlist = function (req, res) {
+    $scope.addbrokerlist = function() {
 
         console.log($scope.data, "brokerlistworking");
         // console.log("brokerlistworking")
@@ -155,13 +159,16 @@ app.controller('algotraderCtrl', function ($scope, $http, $window, $location, co
             }).error(function () { });
     }
 
-    $scope.list = function (req, res) {
+    $scope.list = function() {
         console.log(config.baseurl);
+        $scope.listalp()
         $http.get(config.baseurl + 'broker/')
             .success(function (res) {
-                if (res.status == 'false') { } else {
+                if (res.status == 'false') { } 
+                else {
                     $scope.dataset = res.data;
-                    console.log('dataset: ', $scope.dataset);
+                    $scope.data = res.data[0];
+                    console.log('Interactive Broker: ', $scope.dataset);
                 }
             }).error(function () { });
     }
@@ -171,8 +178,9 @@ app.controller('algotraderCtrl', function ($scope, $http, $window, $location, co
         $http.get(config.baseurl + 'brokeralp/')
             .success(function (res) {
                 if (res.status == 'false') { } else {
+                    $scope.dataAlp = res.data[0];
                     $scope.data1 = res.data;
-                    console.log('dataset: ', $scope.data1);
+                    console.log('Alpac: ', $scope.dataAlp);
                 }
             }).error(function () { });
     }
@@ -266,8 +274,9 @@ app.controller('algotraderCtrl', function ($scope, $http, $window, $location, co
     }
 
 
-    $scope.addbroker = function (req, res) {
-
+     /* --- Add Broker ---*/
+    $scope.addbroker = function() {
+        $scope.savingButtonMsg = "Saving..."
         console.log($scope.data);
 
         if (typeof $scope.data.id == 'undefined') {
@@ -288,53 +297,59 @@ app.controller('algotraderCtrl', function ($scope, $http, $window, $location, co
                 .success(function (res) {
                     if (res.status == 'false') { } else {
                         $scope.response = res.data;
+                        $scope.savingButtonMsg = "Save"
+                        $scope.response = res.data;
                         console.log('message: ', $scope.response);
                         window.location.reload();
                     }
-                }).error(function () { });
+                }).error(function () { 
+                    $scope.savingButtonMsg = "Save"
+                });
         }
-
-
     }
 
-    $scope.addalpbroker = function (req, res) {
+    /* --- Add AlphaBroker ---*/
+    $scope.addalpbroker = function() {
+        $scope.savingButtonMsg = "Saving..."
+        console.log($scope.dataAlp);
 
-        console.log($scope.data);
-
-        if (typeof $scope.data.id == 'undefined') {
+        if (typeof $scope.dataAlp.id == 'undefined') {
             // alert($scope.data.id);
-            $http.post(config.baseurl + 'brokeralp/', $scope.data)
+            $http.post(config.baseurl + 'brokeralp/', $scope.dataAlp)
                 .success(function (res) {
-                    if (res.status == 'error') { } else {
+                    if (res.status == 'error') { } else 
+                    {
+                        $scope.savingButtonMsg = "Save"
                         $scope.response = res.data;
-                        console.log('message: ', $scope.response);
-                        $window.location = ('');
+                        $scope.dataAlp = res.data;
+                        console.log('response: ', $scope.response);
+                        //$window.location = ('');
+                        window.location.reload();
                     }
                 }).error(function () { });
 
         } else {
-
-            // alert($scope.data.id);
-            $http.patch(config.baseurl + 'brokeralp/', $scope.data)
+            //alert($scope.dataAlp.id);
+            $http.patch(config.baseurl + 'brokeralp/', $scope.dataAlp)
                 .success(function (res) {
                     if (res.status == 'false') { } else {
                         $scope.response = res.data;
-                        console.log('message: ', $scope.response);
+                        console.log('Response: ', $scope.response);
+                        $scope.dataAlp = res.data;
+                        $scope.savingButtonMsg = "Save"
                         window.location.reload();
+                       
                     }
                 }).error(function () { });
         }
 
-
     }
 
-    $scope.brokersetting = function (rec, res) {
+    $scope.brokersetting = function() {
         console.log($scope.data);
         console.log();
         console.log('helloo');
         broker = { 'org_id': 14, 'customerId': customerId }
-
-
     }
 
     $scope.addstartbot = function (req, res) {

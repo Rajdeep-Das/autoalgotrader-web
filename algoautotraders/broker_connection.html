@@ -3,6 +3,7 @@
 
 
 <!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/ecommerce_products_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:36:24 GMT -->
+
 <head>
 
     <meta charset="utf-8">
@@ -21,10 +22,10 @@
     <script src="./angular/angular-storage.min.js"></script>
     <script src="./angular/angular-payments.js"></script>
     <script src="./angular/app.js"></script>
-    
+
     <script src="./angular/service.js"></script>
     <script src="./angular/algotraderCtrl.js"></script>
-    
+
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -39,375 +40,479 @@
 
     <link rel="stylesheet" href="css/custom.css">
 
-
 </head>
 
-<body ng-app="website" ng-controller="algotraderCtrl" ng-init="list()" >
+<body ng-app="website" ng-controller="algotraderCtrl" ng-init="list()">
+    <toaster-container></toaster-container>
 
-<div id="wrapper">
+    <div id="wrapper">
 
-    <nav class="navbar-default navbar-static-side" role="navigation" >
-        <div class="sidebar-collapse">
-            <ul class="nav metismenu" id="side-menu">
-                <li class="nav-header">
-                    <div class="dropdown profile-element d-flex justify-content-center">
-                        <img src="img/logo1.png">
-                </li>
-                <li class="active">
-                    <a href="dashboard.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></span></a>
-                   
-                </li>
-                <li>
-                    <a href="alpaca-robot.html?stock=sqqqdata"><span class="nav-label">alpaca-robot</alpaca-robot></span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="ig-robot.html?stock=sqqqdata"><span class="nav-label">Ig-Robot</Ig-Robot></span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="broker_connection.html"><span class="nav-label">Broker Connection</span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="ig-orders.html"><span class="nav-label">ig-Orders</span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="brokerlist.html"><span class="nav-label">brokerlist</span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="stocksignals.html"><span class="nav-label">stocksignals</Ig-Robot></span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="chart.html"><span class="nav-label">Chart</span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="brokerlistorder.html"><span class="nav-label">Brokerklistorder</span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="orders.html"><span class="nav-label">Alpaca-Orders</span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="user.html"><span class="nav-label">User</Ig-Robot></span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="userorder.html"><span class="nav-label">User Order</Ig-Robot></span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="products.html"><span class="nav-label">Products</span><span class="fa arrow"></span></a>
-                </li>
-
-                <li>
-                    <a href="strategies.html"><span class="nav-label">Strategies</span><span class="fa arrow"></span></a>
-                </li>
-               
-            </ul>
-    </nav>
-
-    <div id="page-wrapper" class="gray-bg">
-        <div class="row border-bottom">
-            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header">
-                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                    <form role="search" class="navbar-form-custom" action="http://webapplayers.com/inspinia_admin-v2.9.4/search_results.html">
-                        <div class="form-group">
-                            <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
-                        </div>
-                    </form>
-                </div>
-        
-                <ul class="nav navbar-top-links navbar-right">
-                    <div class="dropdown profile-element">
-                    
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="block m-t-xs font-bold">{{Broker_name}}</span>
-                            <span class="text-muted text-xs block">{{customerId}} <b class="caret"></b></span>
-                        </a>
-                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-                            <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
-                            <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
-                            <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" ng-click="logout()">Logout</a></li>
-                        </ul>
-                    </div>
-            </nav>
-        </div>
-        <div class="row wrapper border-bottom white-bg page-heading">
-            <div class="col-lg-10">
-                <h2>BROKERS CONNECTIONS</h2>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="index-2.html">Home</a>
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element d-flex justify-content-center">
+                            <img src="img/logo1.png">
                     </li>
-                    <li class="breadcrumb-item active">
-                        <strong>Broker Connections</strong>
+                    <li class="active">
+                        <a href="dashboard.html"><i class="fa fa-th-large"></i> <span
+                                class="nav-label">Dashboards</span></span></a>
+
                     </li>
-                </ol>
-            </div>
-        </div>
+                    <li>
+                        <a href="alpaca-robot.html?stock=sqqqdata"><span class="nav-label">alpaca-robot</alpaca-robot>
+                                </span><span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="ig-robot.html?stock=sqqqdata"><span class="nav-label">Ig-Robot</Ig-Robot></span><span
+                                class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="broker_connection.html"><span class="nav-label">Broker Connection</span><span
+                                class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="ig-orders.html"><span class="nav-label">ig-Orders</span><span
+                                class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="brokerlist.html"><span class="nav-label">brokerlist</span><span
+                                class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="stocksignals.html"><span class="nav-label">stocksignals</Ig-Robot></span><span
+                                class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="chart.html"><span class="nav-label">Chart</span><span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="brokerlistorder.html"><span class="nav-label">Brokerklistorder</span><span
+                                class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="orders.html"><span class="nav-label">Alpaca-Orders</span><span
+                                class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="user.html"><span class="nav-label">User</Ig-Robot></span><span
+                                class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="userorder.html"><span class="nav-label">User Order</Ig-Robot></span><span
+                                class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="products.html"><span class="nav-label">Products</span><span
+                                class="fa arrow"></span></a>
+                    </li>
 
-        <div class="row mt-5 ml-4">
-            <div class="col-lg-3">
-                <div class="card p-3">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img src="img/ib.png">
-                        </div>
-                        <div class="col-md-9 mt-3" style="text-align:center;">
-                            <h3><strong>Interactive Brokers</strong></h3>
-                        </div>
-                    </div>
-                    <span class=""><hr></span>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <button class="btn btn-warning btn-xs" ng-click="addconnection()"data-toggle="modal" data-target="#myModal">Connection Status</button>
-                        </div>
-                        <tbody class="table-tbody">
-                    
-                            <tr ng-repeat="data in dataset">
-                                
-                                <td class="sort-name">{{data.Broker_name}}</td>
-                                <td class="sort-name">{{data.customer_id}}</td>
-                                <td class="sort-date">{{data.User_name}}</td>
-                                <td class="sort-date">{{data.Password}}</td>
-                                <td class="sort-date">{{data.End_points}}</td>
-                                <td class="sort-date">{{data.API_KEY}}</td>
+                    <li>
+                        <a href="strategies.html"><span class="nav-label">Strategies</span><span
+                                class="fa arrow"></span></a>
+                    </li>
 
-                            </tr>
+                </ul>
+        </nav>
 
-                        </tbody>
-                        
-                        
-                    </div>
-                    
-                    <span class=""><hr></span>
-                    <div class="height" style="height:200px;"></div><hr>
-                    <button type="submit" ng-click="addbroker()" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Settings</button>
-                </div>
-                <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                    <div class="modal-content animated fadeIn">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <img src="img/ib.png" style="width:80px; height:80px;">
-                                <h4 class="modal-title">Interactive Brokers</h4>
-                                
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                                class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom"
+                            action="http://webapplayers.com/inspinia_admin-v2.9.4/search_results.html">
+                            <div class="form-group">
+                                <input type="text" placeholder="Search for something..." class="form-control"
+                                    name="top-search" id="top-search">
                             </div>
-                            <div class="modal-body">
-                                 
+                        </form>
+                    </div>
+
+                    <ul class="nav navbar-top-links navbar-right">
+                        <div class="dropdown profile-element">
+
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="block m-t-xs font-bold">{{Broker_name}}</span>
+                                <span class="text-muted text-xs block">{{customerId}} <b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
+                                <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" ng-click="logout()">Logout</a></li>
+                            </ul>
+                        </div>
+                </nav>
+            </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>BROKERS CONNECTIONS</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index-2.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <strong>Broker Connections</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="row mt-5 ml-4">
+                <div class="col-lg-3">
+                    <div class="card p-3">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="img/ib.png">
+                            </div>
+                            <div class="col-md-9 mt-3" style="text-align:center;">
+                                <h3><strong>Interactive Brokers</strong></h3>
+                            </div>
+                        </div>
+                        <span class="">
+                            <hr>
+                        </span>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <button class="btn btn-warning btn-xs" ng-click="addconnection()" data-toggle="modal"
+                                    data-target="#myModal">Connection Status</button>
+                            </div>
+                        
+                        </div>
+
+                        <span class="">
+                            <hr>
+                        </span>
+                        <div class="height" style="height:200px;"></div>
+                        <hr>
+                        <button class="btn btn-primary btn-xs" data-toggle="modal"
+                            data-target="#myModal">Settings</button>
+                    </div>
+                    <!-- Interactive Broker Modal Original  START-->
+                    <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content animated fadeIn">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span
+                                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    <img src="img/ib.png" style="width:80px; height:80px;">
+                                    <h4 class="modal-title">Interactive Brokers</h4>
+
+                                </div>
+                                <div class="modal-body">
+
                                     <div class="form">
                                         <form name="brokerSettings">
-                                            
                                             <div class="form-group">
-                                                <input type="text" name="broker_name" class="form-control" placeholder="Broker Name" ng-model="data.Broker_name" required>
-                                                <span class="error  pl-1" ng-show="!brokerSettings.broker_name.$valid && (brokerSettings.broker_name.$touched || submitted)">Broker Name Required </span>
+                                                <label for="broker_name">Broker Name</label>
+                                                <input type="text" name="broker_name" class="form-control"
+                                                    placeholder="Broker Name" ng-model="data.Broker_name" required>
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings.broker_name.$valid && (brokerSettings.broker_name.$touched || submitted)">Broker
+                                                    Name Required </span>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Organization Id" ng-model="data.org_id" readonly>
+                                                <label for="Organization_ID">Organization Id</label>
+                                                <input type="text" name="Organization_ID" class="form-control" placeholder="Organization Id"
+                                                    ng-model="data.org_id" readonly>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="customer_id" class="form-control" placeholder="Customer Id" ng-model="data.customer_id" required>
-                                                <span class="error  pl-1" ng-show="!brokerSettings.customer_id.$valid && (brokerSettings.customer_id.$touched || submitted)">Customer Id Required </span>
+                                                <label for="customer_id">Customer Id</label>
+                                                <input type="text" name="customer_id" class="form-control"
+                                                    placeholder="Customer Id" ng-model="data.customer_id" required>
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings.customer_id.$valid && (brokerSettings.customer_id.$touched || submitted)">Customer
+                                                    Id Required </span>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="user_name" class="form-control" placeholder="User Name" ng-model="data.user_name" required>
-                                                <span class="error  pl-1" ng-show="!brokerSettings.user_name.$valid && (brokerSettings.user_name.$touched || submitted)">User Name Required </span>
+                                                <label for="user_name">User Name</label>
+                                                <input type="text" name="user_name" class="form-control"
+                                                    placeholder="User Name" ng-model="data.user_name" required>
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings.user_name.$valid && (brokerSettings.user_name.$touched || submitted)">User
+                                                    Name Required </span>
                                             </div>
-                                    
-                                           
+
                                             <div class="form-group">
-                                                <input type="text" name="password" class="form-control" placeholder="Password" ng-model="data.password" required>
-                                                <span class="error  pl-1" ng-show="!brokerSettings.password.$valid && (brokerSettings.password.$touched || submitted)">Password Required </span>
+                                                <label for="password">Password</label>
+                                                <input type="password" name="password" class="form-control"
+                                                    placeholder="Password" ng-model="data.password" required>
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings.password.$valid && (brokerSettings.password.$touched || submitted)">Password
+                                                    Required </span>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="end_points" class="form-control" placeholder="End Points" ng-model="data.End_points" required>
-                                                <span class="error  pl-1" ng-show="!brokerSettings.end_points.$valid && (brokerSettings.end_points.$touched || submitted)">Endpoints Required </span>
+                                                <label for="end_points">End Points</label>
+                                                <input type="text" name="end_points" class="form-control"
+                                                    placeholder="End Points" ng-model="data.End_points" required>
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings.end_points.$valid && (brokerSettings.end_points.$touched || submitted)">Endpoints
+                                                    Required </span>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="api_key" class="form-control" placeholder="API KEY" ng-model="data.API_KEY" required>
-                                                <span class="error  pl-1" ng-show="!brokerSettings.api_key.$valid && (brokerSettings.api_key.$touched || submitted)">API Key Required </span>
+                                                <label for="api_key">API Key</label>
+                                                <input type="text" name="api_key" class="form-control"
+                                                    placeholder="API KEY" ng-model="data.API_KEY" required>
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings.api_key.$valid && (brokerSettings.api_key.$touched || submitted)">API
+                                                    Key Required </span>
                                             </div>
-                                            <button type="submit" ng-disabled="brokerSettings.$invalid" ng-click="addbroker()" class="btn btn-primary block full-width m-b">Submit</button>
+                                            <button type="submit" ng-disabled="brokerSettings.$invalid"
+                                                ng-click="addbroker()"
+                                                class="btn btn-primary block full-width m-b">{{savingButtonMsg}}</button>
                                         </form>
                                     </div>
-                            </div>
-                            <div class="modal-footer">
-                                
+                                </div>
+                                <div class="modal-footer">
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
+                    <!-- Interactive Broker Modal END -->
 
-                <!-- Broker Modal 2 starts-->
-                <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true" ng-app="website" ng-controller="algotraderCtrl" ng-init="listalp()">
-                    <div class="modal-dialog">
-                    <div class="modal-content animated fadeIn">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <img src="img/ib.png" style="width:80px; height:80px;">
-                                <h4 class="modal-title">Interactive Brokers</h4>
-                                
-                            </div>
-                            <div class="modal-body">
-                                  <!--login section starts-->
+                    <!--Interactive Broker Modal - Redundant -->
+                    <!-- <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content animated fadeIn">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span
+                                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    <img src="img/ib.png" style="width:80px; height:80px;">
+                                    <h4 class="modal-title">Interactive Brokers</h4>
+
+                                </div>
+                                <div class="modal-body">
+                                    
                                     <div class="form">
                                         <form name="brokerSettings1">
-                                            <!-- Email input -->
+                                           
                                             <div class="form-group">
-                                                <input type="text" name="broker_name" class="form-control" placeholder="Broker Name" ng-model="data.Broker_name" required>
-                                                <span class="error  pl-1" ng-show="!brokerSettings1.broker_name.$valid && (brokerSettings1.broker_name.$touched || submitted)">Broker Name Required </span>
+                                                <input type="text" name="broker_name" class="form-control"
+                                                    placeholder="Broker Name" ng-model="data.Broker_name" required>
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings1.broker_name.$valid && (brokerSettings1.broker_name.$touched || submitted)">Broker
+                                                    Name Required </span>
                                             </div>
                                             <div class="form-group">
-                                                <input type="hidden" class="form-control" placeholder="org_id" ng-model="data.org_id" readonly>
+                                                <input type="hidden" class="form-control" placeholder="org_id"
+                                                    ng-model="data.org_id" readonly>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="customer_id" class="form-control" placeholder="customer_id" ng-model="data.customer_id" required>
-                                                <span class="error  pl-1" ng-show="!brokerSettings1.customer_id.$valid && (brokerSettings1.customer_id.$touched || submitted)">Customer Id Required </span>
+                                                <input type="text" name="customer_id" class="form-control"
+                                                    placeholder="customer_id" ng-model="data.customer_id" required>
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings1.customer_id.$valid && (brokerSettings1.customer_id.$touched || submitted)">Customer
+                                                    Id Required </span>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="user_name" class="form-control" placeholder="user_name" ng-model="data.user_name">
-                                                <span class="error  pl-1" ng-show="!brokerSettings1.user_name.$valid && (brokerSettings1.user_name.$touched || submitted)">User Name Required </span>            
+                                                <input type="text" name="user_name" class="form-control"
+                                                    placeholder="user_name" ng-model="data.user_name">
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings1.user_name.$valid && (brokerSettings1.user_name.$touched || submitted)">User
+                                                    Name Required </span>
                                             </div>
-                                    
-                                            <!-- Password input -->
+
+                                           
                                             <div class="form-group">
-                                                <input type="password" name="password" class="form-control" placeholder="password" ng-model="data.password" required>
-                                                <span class="error  pl-1" ng-show="!brokerSettings1.password.$valid && (brokerSettings1.password.$touched || submitted)">Password Required </span>
+                                                <input type="password" name="password" class="form-control"
+                                                    placeholder="password" ng-model="data.password" required>
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings1.password.$valid && (brokerSettings1.password.$touched || submitted)">Password
+                                                    Required </span>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="end_points" class="form-control" placeholder="End_points" ng-model="data.End_points" required>
-                                                <span class="error  pl-1" ng-show="!brokerSettings1.end_points.$valid && (brokerSettings1.end_points.$touched || submitted)">Endpoints Required </span>
+                                                <input type="text" name="end_points" class="form-control"
+                                                    placeholder="End_points" ng-model="data.End_points" required>
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings1.end_points.$valid && (brokerSettings1.end_points.$touched || submitted)">Endpoints
+                                                    Required </span>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="api_key" class="form-control" placeholder="API_KEY" ng-model="data.API_KEY" required>
-                                                <span class="error  pl-1" ng-show="!brokerSettings1.api_key.$valid && (brokerSettings1.api_key.$touched || submitted)">API key Required </span>
+                                                <input type="text" name="api_key" class="form-control"
+                                                    placeholder="API_KEY" ng-model="data.API_KEY" required>
+                                                <span class="error  pl-1"
+                                                    ng-show="!brokerSettings1.api_key.$valid && (brokerSettings1.api_key.$touched || submitted)">API
+                                                    key Required </span>
                                             </div>
-                                            <button type="submit" ng-click="addbroker()" ng-disabled="brokerSettings1.$invalid" class="btn btn-primary block full-width m-b">Submit</button>
+                                            <button type="submit" ng-click="addbroker()"
+                                                ng-disabled="brokerSettings1.$invalid"
+                                                class="btn btn-primary block full-width m-b">Submit</button>
                                         </form>
                                     </div>
-                            </div>
-                            <div class="modal-footer">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- modal ends-->
-            </div>
-        <div class="col-lg-5">
-            <div class="card p-3">
-                <div class="row">
-                    <div class="col-md-2">
-                        <img src="img/alpaca.png">
-                    </div>
-                    <div class="col-md-9 mt-3" style="text-align:center;">
-                        <h3><strong>Alpaca</strong></h3>
-                    </div>
-                </div>
-                <span class=""><hr></span>
-                <div class="row">
-                    <div class="col-md-8">
-                        <button type="button" class="btn btn-warning btn-xs" ng-click="addconnection()" data-toggle="modal" data-target="#myModal1">Connection Status</button>
-                    </div>
-                </div>
-                
+                                </div>
+                                <div class="modal-footer">
 
-                <span class=""><hr></span>
-                <div class="height" style="height:200px;"></div><hr>
-                <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal1">Settings</button>
-            </div>
-            <!-- modal starts-->
-            <div class="modal inmodal" id="myModal1" tabindex="-1" role="dialog" aria-hidden="true" ng-app="website" ng-controller="algotraderCtrl" ng-init="list()">
-                <div class="modal-dialog">
-                <div class="modal-content animated fadeIn">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <img src="img/alpaca.png" style="width:80px; height:80px;">
-                            <h4 class="modal-title">Alpaca</h4>
-                            
-                        </div>
-                        <div class="modal-body">
-                              <!--modal form section starts-->
-                              <div class="form">
-                                <form name="brokersettings2">
-                                  
-                                    <div class="form-group">
-                                        <input type="text" name="brokername" class="form-control" placeholder="Broker Name" ng-model="data.Broker_name" required>
-                                        
-                                        <span class="error  pl-1" ng-show="!brokerSettings2.brokername.$valid">Broker Name Required </span>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="hidden" class="form-control" placeholder="org_id" ng-model="data.org_id">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="customer_id" class="form-control" placeholder="Customer Id" ng-model="data.customer_id" required>
-                                        <span class="error  pl-1" ng-show="!brokerSettings2.customer_id.$valid && (brokerSettings2.customer_id.$touched || submitted)">Customer ID Required </span>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="user_name" class="form-control" placeholder="Username" ng-model="data.User_name" required>
-                                        <span class="error  pl-1" ng-show="!brokerSettings2.user_name.$valid && (brokerSettings2.user_name.$touched || submitted)">User Name Required </span>
-                                    </div>
-                            
-                                    <!-- Password input -->
-                                    <div class="form-group">
-                                        <input type="text" name="password" class="form-control" placeholder="password" ng-model="data.password" required>
-                                        <span class="error  pl-1" ng-show="!brokerSettings2.password.$valid && (brokerSettings2.password.$touched || submitted)">Password Required </span>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="end_points" class="form-control" placeholder="End Points" ng-model="data.End_points" required>
-                                        <span class="error  pl-1" ng-show="!brokerSettings2.end_points.$valid && (brokerSettings2.end_points.$touched || submitted)">Endpoints Required </span>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="api_key" class="form-control" placeholder="API_KEY" ng-model="data.API_KEY">
-                                        <span class="error  pl-1" ng-show="!brokerSettings2.api_key.$valid && (brokerSettings2.api_key.$touched || submitted)">API Key Required </span>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="Secert_id" class="form-control" placeholder="Secert id" ng-model="data.Secert_id" required>
-                                        <span class="error  pl-1" ng-show="!brokerSettings2.Secert_id.$valid && (brokerSettings2.Secert_id.$touched || submitted)">API Key Required </span>
-                                    </div>
-                                    <button type="submit" ng-click="addalpbroker()" ng-disabled="brokerSettings2.$invalid" class="btn btn-primary block full-width m-b">Submit</button>
-                                </form>
+                                </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            
+                    </div> -->
+                   
+                </div>
+                 <!--InterActive Modal Ends-->
+
+                <!--Alpac Settings-->
+                <div class="col-lg-5">
+                    <div class="card p-3">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="img/alpaca.png">
+                            </div>
+                            <div class="col-md-9 mt-3" style="text-align:center;">
+                                <h3><strong>Alpaca</strong></h3>
+                            </div>
+                        </div>
+                        <span class="">
+                            <hr>
+                        </span>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <button type="button" class="btn btn-warning btn-xs" ng-click="addconnection()"
+                                    data-toggle="modal" data-target="#myModal1">Connection Status</button>
+                            </div>
+                        </div>
+                        <span class="">
+                            <hr>
+                        </span>
+                        <div class="height" style="height:200px;"></div>
+                        <hr>
+                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal"
+                            data-target="#myModal1">Settings</button>
+                    </div>
+                    <!-- Alpac Modal STARTS-->
+                    <div class="modal inmodal" id="myModal1" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content animated fadeIn">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span
+                                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    <img src="img/alpaca.png" style="width:80px; height:80px;">
+                                    <h4 class="modal-title">Alpaca</h4>
+
+                                </div>
+                                <div class="modal-body">
+                                    <!--modal form section starts-->
+                                    <div class="form">
+                                        <form name="alpacaBroker">
+
+                                            <div class="form-group">
+                                                <label for="brokername">Broker Name</label>
+                                                <input type="text" name="brokername" class="form-control"
+                                                placeholder="Broker Name" ng-model="dataAlp.Broker_name" required>
+                                                <span class="error pl-1"
+                                                ng-show="!alpacaBroker.brokername.$valid && (alpacaBroker.brokername.$touched)">
+                                                Broker Name Required
+                                            </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="hidden" class="form-control" placeholder="org_id"
+                                                    ng-model="dataAlp.org_id">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="customer_id">Customer Id</label>
+                                                <input type="text" name="customer_id" class="form-control"
+                                                    placeholder="Customer Id" ng-model="dataAlp.customer_id" required>
+                                                    <span class="error pl-1"
+                                                    ng-show="!alpacaBroker.customer_id.$valid && (alpacaBroker.customer_id.$touched)">
+                                                    Customer Id Required
+                                                    </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="user_name">User Name</label>
+                                                <input type="text" name="user_name" class="form-control"
+                                                    placeholder="Username" ng-model="dataAlp.User_name" required>
+                                                    <span class="error pl-1"
+                                                    ng-show="!alpacaBroker.user_name.$valid && (alpacaBroker.user_name.$touched)">
+                                                    User Name Required
+                                                    </span>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input type="password" name="password" class="form-control"
+                                                    placeholder="password" ng-model="dataAlp.password" required>
+                                                    <span class="error pl-1"
+                                                    ng-show="!alpacaBroker.password.$valid && (alpacaBroker.password.$touched)">
+                                                    Password Required
+                                                    </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="end_points">End Points</label>
+                                                <input type="text" name="end_points" class="form-control"
+                                                    placeholder="End Points" ng-model="dataAlp.End_points" required>
+                                                    <span class="error pl-1"
+                                                    ng-show="!alpacaBroker.end_points.$valid && (alpacaBroker.end_points.$touched)">
+                                                    EndPoint Required
+                                                    </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="api_key">API Key</label>
+                                                <input type="text" name="api_key" class="form-control"
+                                                    placeholder="API_KEY" ng-model="dataAlp.API_KEY">
+                                                    <span class="error pl-1"
+                                                    ng-show="!alpacaBroker.api_key.$valid && (alpacaBroker.api_key.$touched)">
+                                                    API Key Required
+                                                    </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Secert_id">Secrect Id</label>
+                                                <input type="text" name="Secert_id" class="form-control"
+                                                    placeholder="Secert id" ng-model="dataAlp.Secert_id" required>
+                                                    <span class="error pl-1"
+                                                    ng-show="!alpacaBroker.Secert_id.$valid && (alpacaBroker.Secert_id.$touched)">
+                                                    Secert Id Required
+                                                    </span>
+                                            </div>
+                                            <button type="submit" ng-click="addalpbroker()"
+                                                ng-disabled="alpacaBroker.$invalid"
+                                                class="btn btn-primary block full-width m-b">{{savingButtonMsg}}</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Alpac Modal END-->
                 </div>
             </div>
+            <div class="height" style="height:50px;">
+            </div>
+
+            <div class="footer">
+                <div class="float-right">
+                    10GB of <strong>250GB</strong> Free.
+                </div>
+                <div>
+                    <strong>Copyright</strong> AlgoAutoTrader &copy; 2021-2022
+                </div>
+            </div>
+
         </div>
     </div>
-        <div class="height" style="height:50px;">
-    </div>
-        
-    
-    
-    <div class="footer">
-        <div class="float-right">
-                10GB of <strong>250GB</strong> Free.
-        </div>
-        <div>
-            <strong>Copyright</strong> Example Company &copy; 2014-2018
-        </div>
-    </div>
-
-</div>
-</div>
 
 
 
-<!-- Mainly scripts -->
-<script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/popper.min.js"></script>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
-<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-<!-- Custom and plugin javascript -->
-<script src="js/inspinia.js"></script>
-<script src="js/plugins/pace/pace.min.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
 
 </body>
 
 
 <!-- Mirrored from webapplayers.com/inspinia_admin-v2.9.4/ecommerce_products_grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2022 03:36:24 GMT -->
+
 </html>

@@ -1,6 +1,6 @@
 app.factory('config', function() {
     return {
-        baseurl: "https://api.algoautotrader.com/api/",
+        baseurl: "http://localhost:9001/api/",
         orgId: "1"
     };
 })
